@@ -200,7 +200,7 @@ map_data['Confirmed_24hr']=df_confirmed.iloc[:,-1] - df_confirmed.iloc[:,-2]
 map_data.sort_values(by='Confirmed', ascending=False,inplace=True)
 #Moving Singapore to the first row in the datatable
 map_data["new"] = range(1,len(map_data)+1)
-map_data.loc[map_data[map_data['Country/Region'] == 'Singapore'].index.values,'new'] = 0
+map_data.loc[map_data[map_data['Country/Region'] == 'China'].index.values,'new'] = 0
 map_data = map_data.sort_values("new").drop('new', axis=1)
 
 
@@ -1096,7 +1096,7 @@ app.layout = html.Div(
             html.Div(
                     [
                         html.Hr(),
-                        html.P(' ©2020 ',
+                        html.P(' © 2020 ',
                             style={'display': 'inline'}),
                         html.A('Cee',
                                href='https://cee.cx/'),
