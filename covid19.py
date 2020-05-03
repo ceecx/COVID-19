@@ -13,7 +13,7 @@ import datetime
 #####################################################################################################################################
 # Boostrap CSS and font awesome . Option 1) Run from codepen directly Option 2) Copy css file to assets folder and run locally
 #####################################################################################################################################
-external_stylesheets = ['https://codepen.io/unicorndy/pen/GRJXrvP.css','https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css']
+external_stylesheets = ['/assets/GRJXrvP.css','https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css']
 
 #Insert your javascript here. In this example, addthis.com has been added to the web app for people to share their webpage
 external_scripts = [{
