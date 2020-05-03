@@ -1170,4 +1170,6 @@ def close_modal(n):
     return 0
 
 if __name__ == '__main__':
-    app.run_server(debug=False)
+    app.run_server(
+        port=9000,
+        debug=False)
