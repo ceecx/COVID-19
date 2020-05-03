@@ -18,7 +18,7 @@ external_stylesheets = ['/assets/GRJXrvP.css','https://cdn.bootcdn.net/ajax/libs
 #Insert your javascript here. In this example, addthis.com has been added to the web app for people to share their webpage
 external_scripts = [{
         'type': 'text/javascript', #depends on your application
-        'src': 'addthis js link',
+        'src': '',
     }]
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets, external_scripts = external_scripts)
@@ -573,7 +573,7 @@ def draw_singleCountry_Bar(df_confirmed_t,df_deaths_t,df_recovered_t,selected_ro
         title = new[1] + " - " + new[0]
 
     fig.update_layout(
-        title=title + ' (新增确诊)',
+        title=title + ' (新增病例)',
         barmode='stack',
         hovermode='x',
         font=dict(
@@ -678,7 +678,7 @@ app.layout = html.Div(
                     style={"display": "none"},
                 ),
 
-                html.Div([html.Span('数据每日更新，最近更新时间: ',
+                html.Div([html.Span('数据每日同步于霍普金斯大学，最近更新: ',
                              style={'color': colors['text'],
                              }),
                         html.Span(datatime_convert(df_confirmed.columns[-1],1) + '  (UTC).',
@@ -713,7 +713,7 @@ app.layout = html.Div(
         # Top column display of confirmed, death and recovered total numbers
         html.Div([
             html.Div([
-                html.H4(children='感染总数: ',
+                html.H4(children='全球感染人数: ',
                        style={
                            'textAlign': 'center',
                            'color': colors['confirmed_text'],
@@ -726,7 +726,7 @@ app.layout = html.Div(
                     'fontSize': 30,
                 }
                 ),
-                html.P('比较上一日: +' + f"{df_confirmed_total[-1] - df_confirmed_total[-2]:,d}"
+                html.P('比较昨日: +' + f"{df_confirmed_total[-1] - df_confirmed_total[-2]:,d}"
                        + ' (' + str(round(((df_confirmed_total[-1] - df_confirmed_total[-2])/df_confirmed_total[-1])*100, 2)) + '%)',
                        style={
                     'textAlign': 'center',
@@ -738,7 +738,7 @@ app.layout = html.Div(
                 className='four columns',
             ),
             html.Div([
-                html.H4(children='死亡人数: ',
+                html.H4(children='全球死亡人数: ',
                        style={
                            'textAlign': 'center',
                            'color': colors['deaths_text'],
@@ -761,7 +761,7 @@ app.layout = html.Div(
                 style=divBorderStyle,
                 className='four columns'),
             html.Div([
-                html.H4(children='治愈人数: ',
+                html.H4(children='全球治愈人数: ',
                        style={
                            'textAlign': 'center',
                            'color': colors['recovered_text'],
@@ -853,7 +853,7 @@ app.layout = html.Div(
         html.Div([
             html.Div([
 
-                    html.P([html.Span(' 累计感染 ',
+                    html.P([html.Span(' 累计感染最多的地区 ',
                              ),
                     html.Br(),
                     html.Span(' + 过去 24 小时 ',
@@ -875,7 +875,7 @@ app.layout = html.Div(
             ),
 
             html.Div([
-                    html.P([html.Span(' 新增感染 ',
+                    html.P([html.Span(' 新增感染最多的地区 ',
                              ),
                     html.Br(),
                     html.Span(' + 过去 24 小时 ',
@@ -898,7 +898,7 @@ app.layout = html.Div(
             ),
 
             html.Div([
-                    html.P([html.Span(' 累计死亡 ',
+                    html.P([html.Span(' 累计死亡最多的地区 ',
                              ),
                     html.Br(),
                     html.Span(' + 过去 24 小时 (死亡率) ',
@@ -921,7 +921,7 @@ app.layout = html.Div(
             ),
             html.Div([
 
-                    html.P([html.Span(' 新增死亡 ',
+                    html.P([html.Span(' 新增死亡最多的地区 ',
                              ),
                     html.Br(),
                     html.Span(' + 过去 24 小时 (死亡率) ',
