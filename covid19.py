@@ -18,7 +18,7 @@ external_stylesheets = ['https://codepen.io/unicorndy/pen/GRJXrvP.css','https://
 #Insert your javascript here. In this example, addthis.com has been added to the web app for people to share their webpage
 external_scripts = [{
         'type': 'text/javascript', #depends on your application
-        'src': 'insert your addthis.com js here',
+        'src': '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5eae8c039f76be65',
     }]
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets, external_scripts = external_scripts)
