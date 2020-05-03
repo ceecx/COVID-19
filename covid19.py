@@ -18,7 +18,7 @@ external_stylesheets = ['https://codepen.io/unicorndy/pen/GRJXrvP.css','https://
 #Insert your javascript here. In this example, addthis.com has been added to the web app for people to share their webpage
 external_scripts = [{
         'type': 'text/javascript', #depends on your application
-        'src': '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5eae8c039f76be65',
+        'src': 'addthis js link',
     }]
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets, external_scripts = external_scripts)
@@ -853,10 +853,10 @@ app.layout = html.Div(
         html.Div([
             html.Div([
 
-                    html.P([html.Span('累计感染 (地区): ',
+                    html.P([html.Span(' 累计感染 ',
                              ),
                     html.Br(),
-                    html.Span(' + 过去 24 小时',
+                    html.Span(' + 过去 24 小时 ',
                              style={'color': colors['confirmed_text'],
                              'fontWeight': 'bold','fontSize': 14,})
                     ],
@@ -875,10 +875,10 @@ app.layout = html.Div(
             ),
 
             html.Div([
-                    html.P([html.Span('新增感染 (地区): ',
+                    html.P([html.Span(' 新增感染 ',
                              ),
                     html.Br(),
-                    html.Span(' + 过去 24 小时',
+                    html.Span(' + 过去 24 小时 ',
                              style={'color': colors['confirmed_text'],
                              'fontWeight': 'bold','fontSize': 14,})
                     ],
@@ -898,10 +898,10 @@ app.layout = html.Div(
             ),
 
             html.Div([
-                    html.P([html.Span('累计死亡 (地区): ',
+                    html.P([html.Span(' 累计死亡 ',
                              ),
                     html.Br(),
-                    html.Span(' + 过去 24 小时 (死亡率)',
+                    html.Span(' + 过去 24 小时 (死亡率) ',
                              style={'color': '#f2786f',
                              'fontWeight': 'bold','fontSize': 14,})
                     ],
@@ -921,10 +921,10 @@ app.layout = html.Div(
             ),
             html.Div([
 
-                    html.P([html.Span('新增死亡 (地区): ',
+                    html.P([html.Span(' 新增死亡 ',
                              ),
                     html.Br(),
-                    html.Span(' + 过去 24 小时 (死亡率)',
+                    html.Span(' + 过去 24 小时 (死亡率) ',
                              style={'color': '#f2786f',
                              'fontWeight': 'bold','fontSize': 14,})
                     ],
@@ -952,7 +952,7 @@ app.layout = html.Div(
         ),
 
         html.Div([
-            html.Div(children='全球疫情地图 (可选择拖放定位地区)',
+            html.Div(children=' 全球疫情地图 (可选择拖放定位地区) ',
                      style={
                          'textAlign': 'center',
                          'color': colors['text'],
