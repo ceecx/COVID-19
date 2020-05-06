@@ -678,7 +678,7 @@ app.layout = html.Div(
                     style={"display": "none"},
                 ),
 
-                html.Div([html.Span('数据实时更新，当前统计截至世界标准时间: ',
+                html.Div([html.Span('数据自动校准，当前统计截至世界标准时间: ',
                              style={'color': colors['text'],
                              }),
                         html.Span(datatime_convert(df_confirmed.columns[-1],1) + '  (UTC).',
@@ -856,7 +856,7 @@ app.layout = html.Div(
                     html.P([html.Span(' 累计感染最多的地区 ',
                              ),
                     html.Br(),
-                    html.Span(' + 过去 24 小时 ',
+                    html.Span(' + 比较昨日 ',
                              style={'color': colors['confirmed_text'],
                              'fontWeight': 'bold','fontSize': 14,})
                     ],
@@ -878,7 +878,7 @@ app.layout = html.Div(
                     html.P([html.Span(' 新增感染最多的地区 ',
                              ),
                     html.Br(),
-                    html.Span(' + 过去 24 小时 ',
+                    html.Span(' + 比较昨日 ',
                              style={'color': colors['confirmed_text'],
                              'fontWeight': 'bold','fontSize': 14,})
                     ],
@@ -901,7 +901,7 @@ app.layout = html.Div(
                     html.P([html.Span(' 累计死亡最多的地区 ',
                              ),
                     html.Br(),
-                    html.Span(' + 过去 24 小时 (死亡率) ',
+                    html.Span(' + 比较昨日 (死亡率) ',
                              style={'color': '#f2786f',
                              'fontWeight': 'bold','fontSize': 14,})
                     ],
@@ -924,7 +924,7 @@ app.layout = html.Div(
                     html.P([html.Span(' 新增死亡最多的地区 ',
                              ),
                     html.Br(),
-                    html.Span(' + 过去 24 小时 (死亡率) ',
+                    html.Span(' + 比较昨日 (死亡率) ',
                              style={'color': '#f2786f',
                              'fontWeight': 'bold','fontSize': 14,})
                     ],
