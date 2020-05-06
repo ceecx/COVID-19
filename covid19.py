@@ -688,7 +688,7 @@ app.layout = html.Div(
 
                          ],className='twelve columns'
                          ),
-                html.Div(children='因时差问题，每日首次更新于北京时间上午八点左右。',
+                html.Div(children='因有时差问题，每日首次更新于北京时间上午八点左右。',
                          style={
                              'textAlign': 'left',
                              'color': colors['text'],
