@@ -306,10 +306,10 @@ def datatime_convert(date_str,days_to_add=0):
     format_str = '%m/%d/%y' # The format
     datetime_obj = datetime.datetime.strptime(date_str, format_str)
     datetime_obj += datetime.timedelta(days=days_to_add)
-    return datetime_obj.strftime('%d-%b-%Y')
+    return datetime_obj.strftime('%Y-%m-%d')
 
 def return_outbreakdays(date_str):
-    format_str = '%d-%b-%Y' # The format
+    format_str = '%Y-%m-%d' # The format
     datetime_obj = datetime.datetime.strptime(date_str, format_str).date()
 
     d0 = datetime.date(2020, 1, 22)
@@ -678,7 +678,7 @@ app.layout = html.Div(
                     style={"display": "none"},
                 ),
 
-                html.Div([html.Span('数据每日同步于霍普金斯大学，最近更新: ',
+                html.Div([html.Span('数据实时更新，当前统计截至世界标准时间: ',
                              style={'color': colors['text'],
                              }),
                         html.Span(datatime_convert(df_confirmed.columns[-1],1) + '  (UTC).',
@@ -688,7 +688,15 @@ app.layout = html.Div(
 
                          ],className='twelve columns'
                          ),
-                html.Div([html.Span('新型冠状病毒爆发: ',
+                html.Div(children='因时差问题，每日首次更新于北京时间上午八点左右。',
+                         style={
+                             'textAlign': 'left',
+                             'color': colors['text'],
+                             'backgroundColor': colors['background'],
+                         },
+                         className='twelve columns'
+                         ),
+                html.Div([html.Span('新型冠状病毒爆发已持续: ',
                              style={'color': colors['text'],
                              }),
                         html.Span(str(return_outbreakdays(datatime_convert(df_confirmed.columns[-1],1))) + '  天。',
@@ -697,14 +705,6 @@ app.layout = html.Div(
                              }),
 
                          ],
-                         className='twelve columns'
-                         ),
-                html.Div(children='使用电脑浏览获得最好的效果，刷新浏览器以获取最新数据。',
-                         style={
-                             'textAlign': 'left',
-                             'color': colors['text'],
-                             'backgroundColor': colors['background'],
-                         },
                          className='twelve columns'
                          )
             ], className="row"
